@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  service: one
+  reservation_date: 2018-08-25
+  reservation_time: 2018-08-25 18:08:33
+  notes: MyText
+
+two:
+  user: two
+  service: two
+  reservation_date: 2018-08-25
+  reservation_time: 2018-08-25 18:08:33
+  notes: MyText
