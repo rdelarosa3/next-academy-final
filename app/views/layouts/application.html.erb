@@ -12,23 +12,65 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
 
     
     <style type="text/css">
+    /******* Nav customize **********/
+/*      #mainNav{
+        background-color:rgba(255,255,255, 0.7);
+        font-size: 16px;
+        z-index:50;
+        color:black;
+            border-radius: 3px;
+            box-shadow: 0 4px 18px 0px rgba(0, 0, 0, 0.12), 0 7px 10px -5px rgba(0, 0, 0, 0.15);
+        /* font-weight: 600;   */
+      }*/
+      .navbar-nav > li > a {
+        /*padding-top:30px !important; */
+        /*padding-bottom:30px !important;*/
+        color: rgba(28, 35, 49) ;
+      }
+      .navbar a:hover{
+        /*min-height:32px !important;*/
+        color: #fed136;
+      }
+      #mainNav{
+        background-color: rgba(245, 245, 245, 0.3);
+        text-decoration: none;
+       
+        opacity: 1;
+      }
+
+      .nav-img{
+        margin-top: -6px;
+      }
+      /******* !Nav customize **********/
+
+      .jumbotron-background {
+        background-image: url('http://thewowstyle.com/wp-content/uploads/2015/05/pictures-of-beautiful-women..jpg');
+        height: 80vh;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: right -150px;
+      }
+      /******* customize **********/
       a{
         color: black;
         text-decoration: none;
       }
       body {
-         padding-bottom:60px;   /* Height of the footer */
+        font-family: 'Fira Sans', sans-serif;
+        padding-bottom:60px;   /* Height of the footer */
       }
       footer {
-         position:absolute;
+         position:relative;
          /*bottom:0;*/
          width:100%;
+        background-color: rgba(245, 245, 245, 0); 
+        opacity: 1;
       }
-
-
+      /******* Modal -or- seperator **********/
       .or-seperator {
           margin: 20px 0 10px;
           text-align: center;
@@ -41,16 +83,77 @@
           top: -11px;
           z-index: 1;
       }
+      /******* !Modal or seperator **********/
 
+      /* Set margin between nav and body */
+      main {
+          margin-top: 150px; /* Add a top margin to avoid content overlay */
+      }
+
+    /******* Social media button **********/
+      ul.social-buttons {
+        margin-bottom: 0;
+      }
+
+      ul.social-buttons li a {
+        font-size: 20px;
+        line-height: 50px;
+        display: block;
+        width: 50px;
+        height: 50px;
+        -webkit-transition: all 0.3s;
+        transition: all 0.3s;
+        color: white;
+        border-radius: 100%;
+        outline: none;
+        background-color: #212529;
+      }
+
+      ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons li a:hover {
+        background-color: #fed136;
+      }
+      /******* !Social media button **********/
+
+      /******* Team members section **********/
+      .team-member {
+        margin-bottom: 50px;
+        text-align: center;
+      }
+
+      .team-member img {
+        width: 225px;
+        height: 225px;
+        border: 7px solid #fff;
+      }
+
+      .team-member h4 {
+        margin-top: 25px;
+        margin-bottom: 0;
+        text-transform: none;
+      }
+
+      .team-member p {
+        margin-top: 0;
+      }
+      /******* !Team members section **********/
+      .fa-stack i:hover {
+        border-radius: 100%;
+        outline: none;
+        background-color: #fed136;
+
+      }
     </style>
 
-  </head>
 
+  </head>
+  
+  
   <body id="page-top">
+
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light shadow-sm w-100" id="mainNav">
+    <nav class="navbar navbar-expand-lg shadow w-100" id="mainNav">
       <div class="container">
-        <%= link_to "VisibleElegance", root_path, class: "navbar-brand js-scroll-trigger font-weight-bold " %>
+        <%= link_to "VisibleElegance", root_path, class: "navbar-brand  js-scroll-trigger font-weight-bold " %>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
           <i class="fas fa-bars"></i>
@@ -58,28 +161,33 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav text-uppercase ml-auto">
             <li class="nav-item">
-              <%= link_to "Services", services_path, class: "nav-link js-scroll-trigger" %>
+              <%= link_to "Prices", service_types_path, class: "nav-link js-scroll-trigger" %>
+            </li>
+            <% if controller_name == "welcome" %>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#services">Services</a>
             </li>
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#about">About</a>
-            </li>
-            <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#team">Team</a>
             </li>
+            <% end %>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+              <%= link_to "contact", new_reservation_path, class: "nav-link"%>
             </li>
             <% if logged_in? %>
               <!-- while logged in -->
+              <%= admin_status %>
               <li class="nav-item">
                 <%= link_to 'Sign out', log_out_path, class: "nav-link", method: :delete %>
               </li>
               <li> 
-                <%if current_user.avatar.present? %>          
-                <%= image_tag(current_user.avatar_url,class: 'rounded-circle',width: '30', height: '30')%>
+                <% if current_user.avatar? %>
+                  <%= link_to image_tag(current_user.avatar_url,class: 'rounded-circle nav-img',width: '30', height: '30'), current_user, class: "nav-link"%>
+                <% else %>
+                  <%= link_to current_user.first_name, current_user, class: "nav-link"%>
                 <% end %>
               </li>
               <% else %>
@@ -99,8 +207,12 @@
         </div>
       </div>
     </nav>
+
     <!-- !Navigation -->
-    <%= yield %>
+    <% if controller_name != "welcome" %>
+    <div id="main">
+    </div>
+    <% end %>
 
     <!---------------- Sign in Modal ---------------------->
 
@@ -131,23 +243,81 @@
       </div>
         
     <!---------------- !Sign in Modal ---------------------->  
+    <!-- FacebookSDK https://developers.facebook.com/docs/plugins/page-plugin/ -->
+    <div id="fb-root"></div>
+    <script>
+
+    (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.1';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk')); // Replace 'facebook-jssdk' with your page id.
+
+    // Compatibility with Turbolinks 5
+    (function($) {
+      var fbRoot;
+
+      function saveFacebookRoot() {
+        if ($('#fb-root').length) {
+          fbRoot = $('#fb-root').detach();
+        }
+      };
+
+      function restoreFacebookRoot() {
+        if (fbRoot != null) {
+          if ($('#fb-root').length) {
+            $('#fb-root').replaceWith(fbRoot);
+          } else {
+            $('body').append(fbRoot);
+          }
+        }
+
+        if (typeof FB !== "undefined" && FB !== null) { // Instance of FacebookSDK
+          FB.XFBML.parse();
+        }
+      };
+
+      document.addEventListener('turbolinks:request-start', saveFacebookRoot)
+      document.addEventListener('turbolinks:load', restoreFacebookRoot)
+    }(jQuery));
+
+    </script>
+    <!-- WhatsHelp.io widget -->
+    <script type="text/javascript">
+    (function () {
+        var options = {
+            facebook: "138734002813915", // Facebook page ID
+            call_to_action: "Chat with us", // Call to action
+            position: "right", // Position may be 'right' or 'left'
+        };
+        var proto = document.location.protocol, host = "whatshelp.io", url = proto + "//static." + host;
+        var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = url + '/widget-send-button/js/init.js';
+        s.onload = function () { WhWidgetSendButton.init(host, proto, options); };
+        var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
+    })();
+    </script>
+    <!-- /WhatsHelp.io widget -->
+
+    <%= yield %>
 
 
+
+   
     <!------------ Footer ------------>
     <footer class="page-footer font-small stylish-color-dark">
-      <% if controller_name == "sessions" || controller_name == "users" %>
-      <div></div>
-      <% else %>
+      <% unless black_list %>
         <!-- Footer Links -->
-        <div class="container text-center text-md-left">
+        <div class="text-center text-md-left">
           <div class="row">
             <!-- Grid column -->
             <div class="col-md-6 mx-auto">
 
               <!-- Links -->
-              <h3 class="font-weight-bold text-uppercase mt-3 mb-4">_____ <br>Featured content</h3>
+              <h3 class="font-weight-bold text-center text-uppercase mt-3 mb-4">Featured content</h3>
 
-              <ul class="list-unstyled">
+              <ul class="list-unstyled text-center">
                 <li>
                   <a href="#!">Link 1</a>
                 </li>
@@ -167,20 +337,19 @@
             <hr class="clearfix w-100 d-md-none">
             <div class="col-md-6 mx-auto">
               <!------------Contact ------------>
-              <h3 class="font-weight-bold text-uppercase mt-3 mb-4" id="contact">_____ <br>contact info</h3>
-              <p>Please feel free to get in touch with us for any inquiries regarding our services and products.</p>
-              <div class="pull-left ml-3 mr-4">
+            <h3 class="font-weight-bold text-uppercase mt-3 mb-4" id="contact">contact information</h3>
+            <div class="pull-left">
                 <img src="https://dumielauxepices.net/sites/default/files/logos-clipart-hair-668873-47372.jpg" style="width:200px;height:150px">
               </div>
-              <div>
+              <div class="text">
                 <p>
                   <small>
-                    <i class="fa fa-home fa-lg"></i> Visible Elegance Hair Salon<br>
-                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;115 McCauley Ave, <br>
-                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;San Antonio, TX <br>
-                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;78221, USA<br>
-                    <i class="fa fa-phone fa-lg"></i> +1 (210) 924-5700<br><br>
-                    <i class="fa fa-envelope fa-lg"></i> <span><a href="mailto:info@visibleelegancehairsalon.com">info@visible-elegance.com</a></span>
+                    <i class="fa fa-home fa-lg"></i>  <%= business_info.name %><br>
+                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= business_info.street %>, <br>
+                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= business_info.city %>, <%= business_info.state %> <br>
+                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= business_info.zipcode %>, <%= business_info.country %><br>
+                    <i class="fa fa-phone fa-lg"></i> <%= business_info.phone %><br><br>
+                    <i class="fa fa-envelope fa-lg"></i> <span><a href="mailto:<%= business_info.email %>"><%= business_info.email %></a></span>
                   </small>     
                 </p>
               </div>
@@ -192,29 +361,37 @@
         <hr>
         <!------------ Social buttons ------------>
         <ul class="list-unstyled list-inline text-center">
+          <% if business_info.facebook.present? %>
           <li class="list-inline-item">
-            <a href="https://web.facebook.com/Visible-Elegance-Hair-Salon-138734002813915/?_rdc=1&_rdr" class="btn-floating btn-fb mx-1" target="_blank">
+            <a href="<%= @business.facebook %>" class="btn-floating btn-fb mx-1" target="_blank">
               <i class="fab fa-facebook fa-3x"> </i>
             </a>
           </li>
+          <% end %>
+          <% if business_info.instagram.present? %>
           <li class="list-inline-item">
-            <a href="https://www.instagram.com/explore/tags/visibleelegancehairsalon/" class="btn-floating btn-tw mx-1" target="_blank">
+            <a href="<%= @business.instagram %>" class="btn-floating btn-tw mx-1" target="_blank">
               <i class="fab fa-instagram fa-3x"> </i>
             </a>
           </li>
-
+          <% end %>
+          <% if business_info.youtube.present? %>
           <li class="list-inline-item">
-            <a class="btn-floating btn-li mx-1">
+            <a href="<%= @business.youtube %>" class="btn-floating btn-li mx-1">
               <i class="fab fa-youtube fa-3x"> </i>
             </a>
           </li>
+          <% end %>
         </ul>
         <!------------ !Social buttons ------------>
         <!-- Copyright -->
         <div class="footer-copyright text-center text-muted"><small>© 2018 Copyright:
-          <a href="#" class="text-muted"> visible-elegance.com</a></small>
+          <a href="#" class="text-muted"> <%= business_info.email %></a></small>
         </div>
     </footer>
     <!------------ !Footer ------------>
+ 
+
   </body>
+
 </html>

@@ -7,12 +7,12 @@ module UsersHelper
     end
   end
 
-#   # Returns true if current_user exists, false otherwise
+## Returns true if current_user exists, false otherwise
   def logged_in?
     !current_user.nil?
   end
 
-#   # a convenient method to set the session to given user's id with the `:user_id` key
+## a convenient method to set the session to given user's id with the `:user_id` key
   def sign_in(user)
     session[:user_id] = user.id
   end
@@ -22,5 +22,13 @@ module UsersHelper
     session[:user_id] = nil
   end
 
-
+  ######### Admin Panel Link ###########
+  def admin_status
+    admin = '/admin'
+    if current_user.admin?
+      "<li class='nav-item'>
+        <a href='#{admin}' class='nav-link'>Admin Panel</a>
+      </li>".html_safe
+    end
+  end
 end

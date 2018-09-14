@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_25_100833) do
+ActiveRecord::Schema.define(version: 2018_08_31_194037) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,42 @@ ActiveRecord::Schema.define(version: 2018_08_25_100833) do
     t.index ["user_id"], name: "index_authentications_on_user_id"
   end
 
+  create_table "business_hours", force: :cascade do |t|
+    t.bigint "business_id"
+    t.integer "day"
+    t.time "open_time"
+    t.time "close_time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["business_id"], name: "index_business_hours_on_business_id"
+  end
+
+  create_table "businesses", force: :cascade do |t|
+    t.string "name"
+    t.string "street"
+    t.string "city"
+    t.string "state"
+    t.string "country"
+    t.string "phone"
+    t.integer "zipcode"
+    t.string "email"
+    t.string "facebook"
+    t.string "instagram"
+    t.string "youtube"
+    t.string "twitter"
+    t.string "logo"
+    t.string "operator"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "contents", force: :cascade do |t|
+    t.string "description"
+    t.string "address"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "reservations", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "service_id"
@@ -37,22 +73,27 @@ ActiveRecord::Schema.define(version: 2018_08_25_100833) do
     t.index ["user_id"], name: "index_reservations_on_user_id"
   end
 
-  create_table "services", force: :cascade do |t|
-    t.string "type"
+  create_table "service_types", force: :cascade do |t|
     t.string "name"
-    t.text "description"
-    t.integer "price"
-    t.time "length"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "services", force: :cascade do |t|
+    t.bigint "service_type_id"
+    t.string "name"
+    t.text "description"
+    t.integer "price"
+    t.integer "length"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "email", null: false
-    t.string "first_name"
+    t.index ["service_type_id"], name: "index_services_on_service_type_id"
+  end
+
+  create_table "users", force: :cascade do |t|
     t.string "last_name"
+    t.string "first_name"
+    t.string "email", null: false
     t.string "gender"
     t.date "birthday"
     t.string "phone_number"
@@ -62,11 +103,15 @@ ActiveRecord::Schema.define(version: 2018_08_25_100833) do
     t.string "encrypted_password", limit: 128, null: false
     t.string "confirmation_token", limit: 128
     t.string "remember_token", limit: 128, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email"
     t.index ["remember_token"], name: "index_users_on_remember_token"
   end
 
   add_foreign_key "authentications", "users"
+  add_foreign_key "business_hours", "businesses"
   add_foreign_key "reservations", "services"
   add_foreign_key "reservations", "users"
+  add_foreign_key "services", "service_types"
 end

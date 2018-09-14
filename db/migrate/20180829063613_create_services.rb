@@ -1,11 +1,11 @@
 class CreateServices < ActiveRecord::Migration[5.2]
   def change
     create_table :services do |t|
-      t.string :type
+      t.references :service_type, foreign_key: true
       t.string :name
       t.text :description
       t.integer :price
-      t.time :length
+      t.integer :length
 
       t.timestamps
     end

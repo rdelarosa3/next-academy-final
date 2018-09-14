@@ -65,6 +65,15 @@ group :development do
   gem 'mini_magick', '~> 4.5', '>= 4.5.1'
   #admin panel
   gem 'rails_admin', '~> 1.4', '>= 1.4.1'
+  #chorme inspect panel tool
+  gem 'meta_request'
+
+  ### testing app ###
+  gem 'httparty' 
+  gem 'nokogiri'
+  gem 'pry-rails'
+  gem 'watir'
+  gem 'twitter', '~> 6.2'
 
 end
 
@@ -74,6 +83,11 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
+    #import fake data
+  gem 'faker'
+    #chorme inspect panel tool
+  gem 'meta_request'
+
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

@@ -15,6 +15,7 @@ before_action :set_user, only: [:show, :edit, :update, :destroy]
 	# PATCH/PUT /users/1
 	# PATCH/PUT /users/1.json
 	def update
+		
 		respond_to do |format|
 		  if @user.update(user_params)
 		    format.html { redirect_to @user, notice: 'Profile successfully updated.' }
@@ -28,11 +29,6 @@ before_action :set_user, only: [:show, :edit, :update, :destroy]
 		end
 	end
 
-	# GET /users/1/edit
-	def edit
-  	end
-
- 
 
   	# GET /users/1
  	# GET /users/1.json
@@ -47,6 +43,6 @@ before_action :set_user, only: [:show, :edit, :update, :destroy]
 	end
 
 	def user_params
-		params.require(:user).permit(:email, :first_name, :last_name, :birthday, :password, :gender)
+		params.require(:user).permit(:email, :first_name, :last_name, :birthday, :password, :gender, :avatar, :phone_number, :notes, :remove_avatar)
 	end
 end
