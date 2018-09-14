@@ -5,14 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-# service_type = {}
-# types = ['Hair','Color','Waxing']
-# ActiveRecord::Base.transaction do
-# 	types.length.times do
-# 	service_type["name"] = types.pop
-# 	ServiceType.create(service_type)
-# 	end
-# end
+service_type = {}
+types = ['Hair','Color','Waxing']
+ActiveRecord::Base.transaction do
+	types.length.times do
+	service_type["name"] = types.pop
+	ServiceType.create(service_type)
+	end
+end
 
 service = {}
 service_names = ["Up-Do","Haircut - Short","Haircut - Long","Haircut - Medium","Kids - Haircut","Kids - Wash & Dry","Shampoo & Blow-Dry","Shampoo, Blow-Dry & Style"]
@@ -60,36 +60,36 @@ ActiveRecord::Base.transaction do
 		Service.create(service)
 	end
 end
-# user = {}
+user = {}
 
 
-# ActiveRecord::Base.transaction do
+ActiveRecord::Base.transaction do
 
-#     user['first_name'] = 'admin'
-#     user['last_name'] = 'admin'
-#     user['email'] = "admin@admin.com"
-#     user['role'] = 1
-#     user['birthday'] = Faker::Date.between(50.years.ago, Date.today)
-#     user['password'] = 'admin'
-#     User.create(user)
+    user['first_name'] = 'admin'
+    user['last_name'] = 'admin'
+    user['email'] = "admin@admin.com"
+    user['role'] = 1
+    user['birthday'] = Faker::Date.between(50.years.ago, Date.today)
+    user['password'] = 'admin'
+    User.create(user)
 
-# end 
+end 
 
-# business = {}
+business = {}
 
 
-# ActiveRecord::Base.transaction do
-#       business['name'] = "Visible Elegance Hair Salon"
-#       business['street'] = "115 McCauley Ave"
-#       business['city'] = "San Antonio"
-#       business['state'] = "TX"
-#       business['country'] = "USA"
-#       business['phone'] = "+1 (210) 924-5700"
-#       business['zipcode'] = 78211
-#       business['email'] = "info@visible-elegance.com"
-#       business['operator'] = "Sandy"
-#       Business.create(business)
-# end
+ActiveRecord::Base.transaction do
+      business['name'] = "Visible Elegance Hair Salon"
+      business['street'] = "115 McCauley Ave"
+      business['city'] = "San Antonio"
+      business['state'] = "TX"
+      business['country'] = "USA"
+      business['phone'] = "+1 (210) 924-5700"
+      business['zipcode'] = 78211
+      business['email'] = "info@visible-elegance.com"
+      business['operator'] = "Sandy"
+      Business.create(business)
+end
 
 
 # avatar_array = ["https://randomuser.me/api/portraits/men/31.jpg","https://randomuser.me/api/portraits/men/64.jpg","https://randomuser.me/api/portraits/women/90.jpg","https://randomuser.me/api/portraits/women/62.jpg","https://randomuser.me/api/portraits/women/49.jpg"]
