@@ -66,14 +66,13 @@ group :development do
   #admin panel
   gem 'rails_admin', '~> 1.4', '>= 1.4.1'
   #chorme inspect panel tool
-  gem 'meta_request'
+
 
   ### testing app ###
-  gem 'httparty' 
-  gem 'nokogiri'
+
+
   gem 'pry-rails'
-  gem 'watir'
-  gem 'twitter', '~> 6.2'
+
 
 end
 
