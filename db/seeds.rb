@@ -53,7 +53,7 @@ ActiveRecord::Base.transaction do
 	service_names.length.times do
 		service["service_type"] = ServiceType.find(1)
 		service["name"] = service_names.pop
-		service["description"] = Faker::Hipster.sentence
+		# service["description"] = Faker::Hipster.sentence
 		service["price"] = rand(7..30)
 		service["length"] = [15,30,45].sample
 
@@ -69,7 +69,7 @@ ActiveRecord::Base.transaction do
     user['last_name'] = 'admin'
     user['email'] = "admin@admin.com"
     user['role'] = 1
-    user['birthday'] = Faker::Date.between(50.years.ago, Date.today)
+    user['birthday'] = Date.today
     user['password'] = 'admin'
     User.create(user)
 
