@@ -21,7 +21,7 @@ ActiveRecord::Base.transaction do
 	service_names.length.times do
 		service["service_type"] = ServiceType.find(3)
 		service["name"] = service_names.pop
-		service["description"] = Faker::Hipster.sentence
+		# service["description"] = Faker::Hipster.sentence
 		service["price"] = rand(7..50)
 		service["length"] = [15,30,60].sample
 
@@ -37,7 +37,7 @@ ActiveRecord::Base.transaction do
 	service_names.length.times do
 		service["service_type"] = ServiceType.find(2)
 		service["name"] = service_names.pop
-		service["description"] = Faker::Hipster.sentence
+		# service["description"] = Faker::Hipster.sentence
 		service["price"] = rand(55..130)
 		service["length"] = [60,90,120].sample
 
