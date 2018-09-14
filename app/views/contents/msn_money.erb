@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <div class="col md-4">
+    </div>
+    <div class="col md-4">
+      <% @tweets.each do |tweet| %>
+      <div class="card shadow m-2">
+        <span><img src="<%= tweet[:avatar] %>"><strong><%= tweet[:fullname] %></strong> <%= tweet[:username] %> <small><%= tweet[:when] %> </small></span>
+        <p class="card-body">
+          <%= tweet[:content] %>
+        </p>
+      </div>
+      <% end %>
+    </div>
+    <div class="col md-4">
+    </div>
+  </div>
+</div>

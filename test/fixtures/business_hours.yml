@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  business: one
+  day: 1
+  open_time: 2018-09-01 03:40:37
+  close_time: 2018-09-01 03:40:37
+
+two:
+  business: two
+  day: 1
+  open_time: 2018-09-01 03:40:37
+  close_time: 2018-09-01 03:40:37
