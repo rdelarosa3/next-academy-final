@@ -1,15 +1,8 @@
 <style>
   body {
       background-image: linear-gradient(to top, #af9cf2 0%, #ffffff 40%);
-
-      /*url("https://images.unsplash.com/photo-1526516241015-a458e2f23fbd?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=cac9c939409894562dfddbc93e934e95&auto=format&fit=crop&w=2734&q=80");*/
       /* Full height */
       height: 100%; 
-
-      /* Center and scale the image nicely */
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
   }
 
   #service-card{
@@ -19,12 +12,12 @@
 </style>
 
 
-<div class="container md-12">
+<div class="container md-12 mt-4">
   <h3 class="text-uppercase text-center">VISIBLE ELEGANCE OFFERS A FULL RANGE OF PROFESSIONAL SERVICES.</h3>
   <div class="row">
-    <center><p id="notice"><%= notice %></p></center>
     <% @service_types.each do |service_type| %>
-      <div class="card col-md-3.5 m-4 p-4 shadow stylish-color-dark " id="service-card">
+    <div class="col-md-4">
+      <div class="card h-100 container-fluid shadow stylish-color-dark " id="service-card">
         <h4 class="text-center mt-2 stylish-color-dark font-weight-bold text-uppercase"><%= service_type.name %></h4> 
         <table class="table-responsive table-hover">
           <thead>
@@ -48,6 +41,7 @@
           </tbody>
         </table>
       </div>
+    </div>
     <% end %>
   </div>
 </div>

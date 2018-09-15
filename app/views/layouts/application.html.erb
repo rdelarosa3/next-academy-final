@@ -14,33 +14,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
 
+    <!-- Custom fonts for this template -->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
     
     <style type="text/css">
-    /******* Nav customize **********/
-/*      #mainNav{
-        background-color:rgba(255,255,255, 0.7);
-        font-size: 16px;
-        z-index:50;
-        color:black;
-            border-radius: 3px;
-            box-shadow: 0 4px 18px 0px rgba(0, 0, 0, 0.12), 0 7px 10px -5px rgba(0, 0, 0, 0.15);
-        /* font-weight: 600;   */
-      }*/
-      .navbar-nav > li > a {
-        /*padding-top:30px !important; */
-        /*padding-bottom:30px !important;*/
-        color: rgba(28, 35, 49) ;
+
+        /*Styling for the navbar*/
+      #mainNav {
+           background-color: #212529;
+           text-decoration: none;
+             
       }
-      .navbar a:hover{
-        /*min-height:32px !important;*/
-        color: #fed136;
-      }
-      #mainNav{
-        background-color: rgba(245, 245, 245, 0.3);
-        text-decoration: none;
        
-        opacity: 1;
+      #mainNav .navbar-toggler {
+           font-size: 12px;
+           right: 0;
+           padding: 13px;
+           text-transform: uppercase;
+           color: #fff;
+           border: 0;
+           background-color: #00d8ff;
+           font-family: Montserrat, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'
       }
+       
+      #mainNav .navbar-brand {
+         color: #00d8ff;
+         font-family: 'Kaushan Script', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'
+      }
+       
+      #mainNav .navbar-brand.active,
+      #mainNav .navbar-brand:active,
+      #mainNav .navbar-brand:focus,
+      #mainNav .navbar-brand:hover {
+           color: white
+      }
+   
+
+      /**********nav customize***********/
+      .navbar-dark .navbar-nav .nav-link {
+            color: white;
+      }
+      .navbar-dark .navbar-nav .nav-link:hover {
+          color: #00d8ff;
+      }
+
 
       .nav-img{
         margin-top: -6px;
@@ -53,6 +75,7 @@
         background-size: cover;
         background-repeat: no-repeat;
         background-position: right -150px;
+        margin-top: 55px;
       }
       /******* customize **********/
       a{
@@ -110,7 +133,7 @@
       }
 
       ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons li a:hover {
-        background-color: #fed136;
+        background-color: #00d8ff;
       }
       /******* !Social media button **********/
 
@@ -139,7 +162,7 @@
       .fa-stack i:hover {
         border-radius: 100%;
         outline: none;
-        background-color: #fed136;
+        background-color: #00d8ff;
 
       }
     </style>
@@ -151,10 +174,11 @@
   <body id="page-top">
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg shadow w-100" id="mainNav">
+    <nav class="navbar navbar-expand-lg shadow navbar-dark fixed-top" id="mainNav">
+    <!-- <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav"> -->
       <div class="container">
         <%= link_to "VisibleElegance", root_path, class: "navbar-brand  js-scroll-trigger font-weight-bold " %>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler navbar-toggler-right mr-2" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
           <i class="fas fa-bars"></i>
         </button>
@@ -167,9 +191,7 @@
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#services">Services</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a>
-            </li>
+
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#team">Team</a>
             </li>

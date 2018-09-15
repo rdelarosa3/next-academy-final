@@ -4,31 +4,13 @@ RailsAdmin.config do |config|
   config.parent_controller = "::ApplicationController"
 
   config.authorize_with do |controller|
-    unless current_user && current_user.admin?
+    unless current_user && (current_user.admin? || current_user.operator?)
       redirect_to(
         main_app.root_path,
         alert: "You are not permitted to view this page"
       )
     end
   end
-  ### Popular gems integration
-
-  ## == Devise ==
-  # config.authenticate_with do
-  #   warden.authenticate! scope: :user
-  # end
-  # config.current_user_method(&:current_user)
-
-  ## == Cancan ==
-  # config.authorize_with :cancan
-
-  ## == Pundit ==
-  # config.authorize_with :pundit
-
-  ## == PaperTrail ==
-  # config.audit_with :paper_trail, 'User', 'PaperTrail::Version' # PaperTrail >= 3.0.0
-
-  ### More at https://github.com/sferik/rails_admin/wiki/Base-configuration
 
   ## == Gravatar integration ==
   ## To disable Gravatar integration in Navigation Bar set to false
@@ -51,10 +33,12 @@ RailsAdmin.config do |config|
     ## With an audit adapter, you can add:
     # history_index
     # history_show
+
   end
 
   ######## remove models from navigation pane #######
   config.excluded_models << "Authentication"
+
 
   ###### config User model ############
   config.model User do
@@ -84,6 +68,7 @@ RailsAdmin.config do |config|
 
   ######## config Service model ##########
   config.model Service do
+
 
     navigation_label 'Salon Info'
     create do
@@ -143,6 +128,5 @@ RailsAdmin.config do |config|
   end
 
 end
-
 
 
