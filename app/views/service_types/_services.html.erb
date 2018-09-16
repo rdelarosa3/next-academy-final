@@ -1,19 +1,14 @@
-<style>
-  body {
-      background-image: linear-gradient(to top, #0cafcebf 0%, #ffffff 60%);
-      padding-bottom: 120px;
-      background-repeat: no-repeat;
-      background-size: cover;
-      margin-top: 100px;
-  }
-
+  <style>
   #service-card{
-    background-color: rgba(245, 245, 242, 0.8); 
-    opacity: 1;
-  }
-
-  .mt-100 {
-    margin-top: 100px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #f8f9fa;
+    background-clip: border-box;
+    border: 0px solid rgba(0, 0, 0, 0.0); 
+    border-radius: 0.25rem;
   }
 
   .table-responsive {
@@ -45,12 +40,12 @@
 </style>
 
 
-<div class="container md-12 mt-100">
+<div class="container md-12">
   <h2 class="text-uppercase text-center">PROFESSIONAL SERVICES</h2>
   <div class="row">
     <% @service_types.each do |service_type| %>
-    <div class="col-md-4 mb-4">
-      <div class="card h-100 container-fluid shadow stylish-color-dark " id="service-card">
+    <div class="col-md-12 mb-4">
+      <div class="card h-100 container-fluid stylish-color-dark " id="service-card">
         <h4 class="text-center mt-3 stylish-color-dark font-weight-bold text-uppercase"><%= service_type.name %></h4> 
         <table class="table-responsive table-hover">
           <thead>

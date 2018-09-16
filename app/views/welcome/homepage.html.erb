@@ -1,15 +1,46 @@
 <style>
-@media (max-width: 1000px) {
-.jumbotron-background {
+/*mobile styling*/
+@media (max-width: 1400px) {
+  .jumbotron-background {
     background-image: url(http://thewowstyle.com/wp-content/uploads/2015/05/pictures-of-beautiful-women..jpg);
-    height: 70vh;
+    height: 40vh;
     background-size: 100% 100%;
     background-position: right 0px;
     background-repeat: no-repeat;
     margin-top: 55px;
   }
+}
+@media (max-width: 800px) {
+  #jumboTitle {
+    font-size: 45px;
+    margin-top: -102px;
+  }
+
+  #product img {
+    width: 80px!important;
+    height: 14px!important;
+
+  }
+  #product .col-md-3{
+  width:25%;
+  }
+
+  #product .container {
+    margin-top: -26px;
+  }
 
 }
+  /* !mobile section */
+
+  .jumbotron-background {
+    background-image: url('http://thewowstyle.com/wp-content/uploads/2015/05/pictures-of-beautiful-women..jpg');
+    height: 80vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right -150px;
+    margin-top: 55px;
+    background-color: white;
+  }
 
   #jumboTitle {
     font-size: 50px;
@@ -22,27 +53,15 @@
     -webkit-text-stroke-color: #00000047;
   }
 
-  #team h2 {
-    font-size: 40px;
-    font-weight: 700;
-    font-family: Montserrat,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';
-  }
-  #team h4 {
-    margin-top: -15px;
-    margin-bottom: 1.5rem;
-    font-size: 1.5rem;
-    font-weight: 700;
-    font-family: Montserrat,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';
-  }
 
-
-  .team-member p {
-    margin-top: -25px;
-}
-
-.team-member img {
-    margin-bottom: 15px;
+  p {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.75;
+    color: #6c757d;
+    font-family: 'Roboto Slab',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';
   }
+  /*services section*/
 
   #services h2{
     font-size: 40px;
@@ -58,19 +77,11 @@
     font-family: Montserrat,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';
   }
 
-   p {
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.75;
-    color: #6c757d!important;
-    font-family: 'Roboto Slab',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';
-  }
-
   #services h3 {
     font-size: 16px;
     font-weight: 400;
     font-style: italic;
-    margin-bottom: 75px;
+    margin-bottom: 40px;
     text-transform: none;
     font-family: 'Droid Serif',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';
   }
@@ -90,6 +101,62 @@
   .service-heading {
     margin-top: 10px;
   }
+  #services h3 a{
+    text-decoration: none;
+  }
+  #services .section-footer {
+    margin-top: 31px;
+    margin-bottom: -35px;
+  }
+
+  /*!services*/
+
+  /******* Team members section **********/
+
+  #team h2 {
+    font-size: 40px;
+    font-weight: 700;
+    font-family: Montserrat,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';
+  }
+  #team h4 {
+    margin-top: -15px;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-family: Montserrat,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';
+  }
+
+
+  .team-member p {
+    margin-top: -25px;
+  }
+
+  .team-member img {
+    margin-bottom: 15px;
+  }
+  .team-member {
+    margin-bottom: 50px;
+    text-align: center;
+  }
+
+  .team-member img {
+    width: 225px;
+    height: 225px;
+    border: 7px solid #fff;
+  }
+
+  .team-member h4 {
+    margin-top: 25px;
+    margin-bottom: 0;
+    text-transform: none;
+  }
+
+  .team-member p {
+    margin-top: 0;
+  }
+  /******* !Team members section **********/
+
+
 </style>
 
 <div class="jumbotron jumbotron-background jumbotron-fluid">
@@ -100,26 +167,26 @@
   </div>
 </div>
     <!-- Our Products -->
-    <section>
+    <section id="product">
       <div class="container">
         <div class="row">
-          <div class="col-md-3 col-sm-6">
+          <div class="col-md-3">
             
               <img class="img-fluid d-block mx-auto" src="https://www.icunsol.it/wp-content/uploads/2016/04/logo-colorinsider.jpg" alt="">
     
           </div>
-          <div class="col-md-3 col-sm-6">
+          <div class="col-md-3">
             
               <img class="img-fluid d-block mx-auto" src="https://www.icunsol.it/wp-content/uploads/2016/04/logo-matrix-color.jpg" alt="">
     
           </div>
-          <div class="col-md-3 col-sm-6">
+          <div class="col-md-3">
             
               <img class="img-fluid d-block mx-auto" src="https://www.colorwowhair.com/skin/frontend/rwd/colorwow/images/logo.svg" style="height:66.56px" alt="">
     
           </div>
 
-          <div class="col-md-3 col-sm-6">
+          <div class="col-md-3">
             
               <img class="img-fluid d-block mx-auto" src="http://salonsabeha.com/wp-content/uploads/2015/07/brazilianblowout_logo.png" style="width:210px;height:66.56px" alt="">
     
@@ -168,8 +235,29 @@
             <p class="text-muted">Manicure, Nail design, Waxing, and more.</p>
           </div>
         </div>
+        <div class="row">
+          <div class="col-lg-12 text-center section-footer">
+          <h3>
+            <a href="#" data-target="#serviceTypes" data-toggle="modal" class="text-muted">Click here for Service Prices</a>
+          </h3>
+          </div>
+        </div>
       </div>
     </section>
+
+        <!---------------- Services Modal ---------------------->
+
+      <div class="modal fade" id="serviceTypes" tabindex="0">
+          <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                      <div class="modal-body">
+                        <%= render :partial => "service_types/services" %>
+                      </div>
+              </div>
+          </div>
+      </div>
+        
+    <!---------------- !Services Modal ---------------------->  
 
 
 
