@@ -1,16 +1,13 @@
 <style>
 /*mobile styling*/
-@media (max-width: 1400px) {
+@media (max-width: 1050px) {
   .jumbotron-background {
-    background-image: url(http://thewowstyle.com/wp-content/uploads/2015/05/pictures-of-beautiful-women..jpg);
-    height: 40vh;
-    background-size: 100% 100%;
-    background-position: right 0px;
-    background-repeat: no-repeat;
-    margin-top: 55px;
+    height: 40vh!important;
+    background-size: 100% 100%!important;
+    background-position: right 0px!important;
   }
 }
-@media (max-width: 800px) {
+@media (max-width: 1000px) {
   #jumboTitle {
     font-size: 45px;
     margin-top: -102px;
@@ -32,7 +29,7 @@
 }
   /* !mobile section */
 
-  .jumbotron-background {
+    .jumbotron-background {
     background-image: url('http://thewowstyle.com/wp-content/uploads/2015/05/pictures-of-beautiful-women..jpg');
     height: 80vh;
     background-size: cover;
@@ -250,6 +247,9 @@
       <div class="modal fade" id="serviceTypes" tabindex="0">
           <div class="modal-dialog modal-dialog-centered">
               <div class="modal-content">
+                <div>
+                <button class="close mr-auto pt-1 pr-4"  data-dismiss="modal">&times;</button>
+                </div>
                       <div class="modal-body">
                         <%= render :partial => "service_types/services" %>
                       </div>
