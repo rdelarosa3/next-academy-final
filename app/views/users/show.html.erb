@@ -1,19 +1,32 @@
-<div class="container md-12 mt-4 pt-4">
+<style>
+.btn-edit {
+    color: #fff;
+    background-color: #07b8da;
+    border-color: #06a9c7d6;
+}
+
+.mt-100 {
+  margin-top: 100px;
+}
+</style>
+
+
+<div class="container md-12 mt-100 pt-4">
   <div class="row">
     <div class="col-md-4">
         <center>
           <% if @user.avatar? %>
-              <%= image_tag(@user.avatar_url, class: 'rounded-circle',width: '300', height: '300') %>
+              <%= image_tag(@user.avatar_url, class: 'rounded-circle',width: '200', height: '200') %>
               <br><br>
   
           <% else %>
-              <%= image_tag( "http://hannsaa.com/userfiles/avatars/default.jpg", class: 'rounded-circle',width: '300', height: '300') %>
+              <%= image_tag( "http://hannsaa.com/userfiles/avatars/default.jpg", class: 'rounded-circle',width: '200', height: '200') %>
              <br>
              <br>
           <% end %>
           <p class="stylish-color-dark"> Joined on <%= @user.created_at.strftime("%B %Y") %></p>
           <% if current_user == @user %>
-            <%= link_to 'Edit Profile', edit_user_path(@user),class: "btn btn-danger btn-sm" %> 
+            <%= link_to 'Edit Profile', edit_user_path(@user),class: "btn btn-edit btn-sm" %> 
           <p id="notice"><%= notice %></p>
           <% end %>
         </center>

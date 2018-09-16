@@ -1,22 +1,46 @@
 <style>
   body {
-      background-image: linear-gradient(to top, #af9cf2 0%, #ffffff 40%);
-      /* Full height */
-      height: 100%; 
+      background-image: linear-gradient(to top, #0cafcebf 0%, #ffffff 60%);
+      height: 100vh;
   }
 
   #service-card{
     background-color: rgba(245, 245, 242, 0.8); 
     opacity: 1;
   }
+
+  .mt-100 {
+    margin-top: 100px;
+  }
+
+  h2 {
+    font-size: 40px;
+    font-weight: 700;
+    font-family: Montserrat,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';
+    margin-bottom: 40px;
+  }
+
+
+  h4 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-family: Montserrat,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';
+  }
+
+ p {
+    font-size: .8rem;
+    font-weight: 400;
+    color: #6c757d!important;
+    font-family: 'Roboto Slab',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';
+}
 </style>
 
 
-<div class="container md-12 mt-4">
-  <h3 class="text-uppercase text-center">VISIBLE ELEGANCE OFFERS A FULL RANGE OF PROFESSIONAL SERVICES.</h3>
+<div class="container md-12 mt-100">
+  <h2 class="text-uppercase text-center">PROFESSIONAL SERVICES</h2>
   <div class="row">
     <% @service_types.each do |service_type| %>
-    <div class="col-md-4">
+    <div class="col-md-4 mb-4">
       <div class="card h-100 container-fluid shadow stylish-color-dark " id="service-card">
         <h4 class="text-center mt-2 stylish-color-dark font-weight-bold text-uppercase"><%= service_type.name %></h4> 
         <table class="table-responsive table-hover">

@@ -7,12 +7,13 @@
     <% if logged_in? %>
     <%= f.input_field :user_id, as: :hidden, value:  current_user.id %>
     <% end %>
-  
-    <%= f.association :service, :as => :grouped_select, :collection => ServiceType.order(:name), :group_method => :services, label:'What service would you like?', error:'Please select a service' %>
+    What service would you like?
+    <%= f.association :service, :as => :grouped_select, :collection => ServiceType.order(:name), :group_method => :services, label: false, error:'Please select a service' %>
     
     What date?
-    <%= f.text_field :reservation_date, type: 'date', min: Date.today, label: 'Which date?', required: true, class: 'form-control mt-1 mb-2'%>
-    <%= f.input :reservation_time, type: 'time', label: 'What time?', class: 'form-control p-1' %>
+    <%= f.text_field :reservation_date, label: false, type: 'date', min: Date.today, required: true, class: 'form-control mt-1 mb-2'%>
+    What time?
+    <%= f.input :reservation_time, label: false, type: 'time', class: 'form-control p-1' %>
     <%= f.input :notes, label: 'Special Requests' %>
   </div>
 
