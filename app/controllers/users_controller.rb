@@ -34,6 +34,7 @@ before_action :set_user, only: [:show, :edit, :update, :destroy]
  	# GET /users/1.json
 	def show
 		@user = User.find(params[:id])
+		
 	end
 
 	private
